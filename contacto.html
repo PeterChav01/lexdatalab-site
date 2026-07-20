@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — LexData Lab</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="hexfield"></div>
+
+<header>
+  <nav>
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 3 L35 11.5 V28.5 L20 37 L5 28.5 V11.5 Z" stroke="#3ED6C4" stroke-width="1.6"/><path d="M20 3 L35 11.5 M35 11.5 L38 9.8" stroke="#3ED6C4" stroke-width="1.6"/></svg>
+      LexData Lab
+    </a>
+    <div class="navlinks">
+      <a href="servicios.html">Servicios</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="faq.html">FAQ</a>
+      <span class="divider"></span>
+      <a href="index.html#ramas">OmniPC · Academy</a>
+      <span class="divider"></span>
+      <a href="index.html#colaboraciones" style="color:var(--violet);font-weight:600;">Legal · Diseño</a>
+    </div>
+    <a href="contacto.html" class="cta-btn">Solicitar peritaje</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="eyebrow">Contacto</div>
+  <h1>Cuéntanos tu caso</h1>
+  <p>Respondemos en menos de 24 horas hábiles. Toda la información que compartas se maneja bajo confidencialidad profesional.</p>
+</div>
+
+<section data-reveal>
+  <div class="wrap">
+    <div style="border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:6px;padding:24px 30px;background:linear-gradient(90deg, rgba(62,214,196,0.07), transparent 40%);">
+      <div class="eyebrow" style="margin-bottom:16px;">Antes de escribirnos</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px 24px;font-size:13.5px;color:var(--text);">
+        <div style="display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;">✓</span><span>No borres ni modifiques nada del dispositivo o la cuenta.</span></div>
+        <div style="display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;">✓</span><span>No confrontes todavía a la otra parte sobre lo que encontraste.</span></div>
+        <div style="display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;">✓</span><span>Anota la fecha y hora en que detectaste el problema.</span></div>
+        <div style="display:flex;gap:10px;"><span style="color:var(--cyan);font-weight:700;">✓</span><span>No compartas la evidencia con más personas de las necesarias.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal>
+  <div class="wrap contact-grid">
+    <div>
+      <div class="stub-note">Formulario visual — pendiente de conectar a Formspree</div>
+      <form>
+        <div class="form-field">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre">
+        </div>
+        <div class="form-field">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="tu@correo.com">
+        </div>
+        <div class="form-field">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="55 0000 0000">
+        </div>
+        <div class="form-field">
+          <label>Tipo de servicio</label>
+          <select id="tipo-servicio">
+            <option>Peritaje judicial</option>
+            <option>Auditoría empresarial</option>
+            <option>Análisis de incidente</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Cuéntanos tu caso</label>
+          <textarea id="detalle-caso" placeholder="Describe brevemente el tipo de evidencia y el contexto legal del caso"></textarea>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="disclaimer">
+          <label for="disclaimer">Confirmo que mi solicitud no implica acceso no autorizado a cuentas o dispositivos de terceros.</label>
+        </div>
+        <button type="button" class="btn-primary" style="border:none;cursor:pointer;">Enviar solicitud</button>
+      </form>
+    </div>
+    <div class="contact-side">
+      <div class="stub-note" style="margin-bottom:18px;">Pendiente: correo (Workspace) y WhatsApp Business</div>
+      <h4>Contacto directo</h4>
+      <div class="contact-line">📞 <span class="mono" style="color:var(--amber);">[teléfono]</span></div>
+      <div class="contact-line">✉️ <span class="mono" style="color:var(--amber);">[correo@lexdatalab.com.mx]</span></div>
+      <div class="contact-line">📍 <span class="mono" style="color:var(--amber);">[ciudad, Michoacán]</span></div>
+      <a href="#" class="wa-btn" style="opacity:0.5;pointer-events:none;">Escribir por WhatsApp (próximamente)</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Preselecciona el tipo de servicio y sugiere el detalle si se llega desde una tarjeta de servicios.html
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get('tipo');
+    const detalle = params.get('detalle');
+    if (tipo) {
+      const select = document.getElementById('tipo-servicio');
+      if (select) {
+        [...select.options].forEach(opt => { if (opt.value === tipo) select.value = tipo; });
+      }
+    }
+    if (detalle) {
+      const textarea = document.getElementById('detalle-caso');
+      if (textarea) {
+        textarea.placeholder = `Cuéntanos los detalles de tu caso de "${detalle}"...`;
+      }
+    }
+  })();
+</script>
+
+<footer>
+  <div class="wrap footer-row">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 3 L35 11.5 V28.5 L20 37 L5 28.5 V11.5 Z" stroke="#3ED6C4" stroke-width="1.6"/></svg>
+      LexData Lab
+    </a>
+    <div class="footer-links">
+      <a href="servicios.html">Servicios</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="aviso-privacidad.html">Aviso de privacidad</a>
+    </div>
+    <div class="meta">lexdatalab.com.mx · perito informático certificado</div>
+  </div>
+</footer>
+</body>
+</html>
