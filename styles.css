@@ -102,6 +102,7 @@ nav{
 }
 .eyebrow::before{content:'';width:8px;height:8px;background:var(--cyan);border-radius:50%;box-shadow:0 0 8px var(--cyan);}
 #colaboraciones .eyebrow::before{background:var(--violet);box-shadow:0 0 8px var(--violet);}
+.legal-faq summary::after{color:var(--violet) !important;}
 .page-hero h1{font-size:40px;font-weight:600;letter-spacing:-0.02em;margin-bottom:16px;}
 .page-hero p{font-size:16px;color:var(--text-dim);max-width:600px;}
 
