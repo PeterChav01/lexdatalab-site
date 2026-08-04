@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Ch\xc3\xa1vez Aparicio;Jos\xc3\xa9 Pedro;;Lic. e Ing.;
+FN:Jos\xc3\xa9 Pedro Ch\xc3\xa1vez Aparicio
+ORG:LexData Lab
+TITLE:Perito en Inform\xc3\xa1tica Forense
+TEL;TYPE=CELL,VOICE,PREF:+52 443 563 3301
+EMAIL;TYPE=INTERNET,PREF:contacto@lexdatalab.com.mx
+URL:https://lexdatalab.com.mx/
+ADR;TYPE=WORK:;;Morelia;Michoac\xc3\xa1n;;;M\xc3\xa9xico
+NOTE:Peritaje judicial\, auditor\xc3\xadas forenses y an\xc3\xa1lisis de incidentes. Cobertura nacional por videoconferencia.
+END:VCARD
